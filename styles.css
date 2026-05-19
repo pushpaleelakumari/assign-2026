@@ -689,7 +689,7 @@ tbody td:first-child {
 
 @media (max-width: 768px) {
     .hero {
-        padding: 70px 16px 60px;
+        padding: 20px 16px 0px;
     }
 
     .hero-cards {
@@ -779,7 +779,6 @@ tbody td:first-child {
 }
 
 .faq-container {
-    max-width: 1180px;
     margin: 0 auto;
 }
 
@@ -863,7 +862,7 @@ tbody td:first-child {
 
 @media (max-width: 768px) {
     .faq-section {
-        padding: 60px 16px;
+        padding: 0px 5px;
     }
 
     .faq-heading {
@@ -876,7 +875,7 @@ tbody td:first-child {
     }
 
     .faq-question {
-        padding: 18px 16px;
+        padding: 5px 16px;
     }
 
     .faq-question span {
@@ -1070,7 +1069,6 @@ tbody td:first-child {
     left: 32px;
     bottom: 32px;
     right: 32px;
-    z-index: 2;
 }
 
 .card-content h3 {
@@ -1322,7 +1320,7 @@ tbody td:first-child {
 
 @media (max-width: 991px) {
     .manufacturing-process-section {
-        padding: 40px 24px;
+        padding: 10px 0px;
     }
 
     .manufacturing-process-header h2 {
@@ -1535,7 +1533,7 @@ tbody td:first-child {
 
 @media (max-width: 768px) {
     .testimonial-section {
-        padding: 60px 0;
+        padding: 10px 0;
     }
 
     .section-header {
@@ -1698,7 +1696,7 @@ tbody td:first-child {
 @media (max-width: 768px) {
 
     .piping-solutions-section {
-        padding: 60px 0;
+        padding: 10px 0;
     }
 
     .piping-solutions-header {
@@ -1889,7 +1887,8 @@ tbody td:first-child {
 
 .manufacturing-contact-section {
     width: 100%;
-    padding-bottom: 80px;
+    padding-bottom: 20px;
+    z-index: 1 !important;
 }
 
 .manufacturing-contact-wrapper {
@@ -2313,12 +2312,10 @@ tbody td:first-child {
     position: absolute;
     inset: 0;
     background: rgba(255, 255, 255, 0.75);
-    z-index: 1;
 }
 
 .footer-main-container {
     position: relative;
-    z-index: 2;
     width: 90%;
     margin: auto;
 }
