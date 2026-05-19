@@ -129,5 +129,138 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     setInterval(autoSlide, 2000);
+});
 
+// download button popup
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("downloadModal");
+    const closeModalBtn = document.getElementById("closeModal");
+    const form = document.getElementById("brochureForm");
+    const successAlert = document.getElementById("successAlert");
+    const downloadButtons = document.querySelectorAll(".download-btn");
+
+    // Form fields
+    const emailInput = document.getElementById("email");
+    const contactInput = document.getElementById("contact");
+    const submitBtn = form.querySelector(".submit-btn");
+
+    /* =========================
+       BUTTON ENABLE / DISABLE
+    ========================= */
+    function validateForm() {
+    const emailValue = emailInput.value.trim();
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValidEmail = emailRegex.test(emailValue);
+
+    if (isValidEmail) {
+        submitBtn.disabled = false;
+        submitBtn.classList.add("active");
+
+        // Enable button styles
+        submitBtn.style.backgroundColor = "#2B3990";
+        submitBtn.style.color = "#ffffff";
+        submitBtn.style.cursor = "pointer";
+        submitBtn.style.opacity = "1";
+    } else {
+        submitBtn.disabled = true;
+        submitBtn.classList.remove("active");
+
+        // Disabled button styles
+        submitBtn.style.backgroundColor = "#DCE3F0";
+        submitBtn.style.color = "#ffffff";
+        submitBtn.style.cursor = "not-allowed";
+        submitBtn.style.opacity = "0.8";
+    }
+}
+
+    /* =========================
+       OPEN MODAL
+    ========================= */
+    downloadButtons.forEach((button) => {
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Reset form
+            form.reset();
+
+            // Hide alert
+            successAlert.classList.remove("show");
+
+            // Disable button initially
+            validateForm();
+
+            // Show modal
+            modal.classList.add("show");
+
+            // Focus email field
+            emailInput.focus();
+        });
+    });
+
+    /* =========================
+       CLOSE MODAL
+    ========================= */
+    closeModalBtn.addEventListener("click", function () {
+        modal.classList.remove("show");
+    });
+
+    // Close on outside click
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            modal.classList.remove("show");
+        }
+    });
+
+    /* =========================
+       EMAIL VALIDATION
+    ========================= */
+    emailInput.addEventListener("input", validateForm);
+
+    /* =========================
+       CONTACT INPUT
+       ONLY NUMBERS ALLOWED
+    ========================= */
+    contactInput.addEventListener("input", function () {
+        // Keep only digits
+        let numbersOnly = this.value.replace(/\D/g, "");
+
+        // Limit to 10 digits (change if needed)
+        numbersOnly = numbersOnly.slice(0, 10);
+
+        // Add +91 prefix if user entered digits
+        this.value = numbersOnly ? `+91-${numbersOnly}` : "";
+
+        // Keep button validation updated
+        validateForm();
+    });
+
+    /* =========================
+       FORM SUBMIT
+    ========================= */
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Extra safety
+        if (emailInput.value.trim() === "") return;
+
+        // Show success message
+        successAlert.classList.add("show");
+
+        // Clear form fields
+        form.reset();
+
+        // Disable button again
+        validateForm();
+
+        // Close modal after 3 seconds
+        setTimeout(() => {
+            successAlert.classList.remove("show");
+            modal.classList.remove("show");
+        }, 1000);
+    });
+
+    // Initial state
+    validateForm();
 });

@@ -75,7 +75,7 @@ header {
     background: url('./images/bg.png');
     background-size: cover;
     background-position: center;
-    padding: 40px;
+    padding: 0px 40px;
     overflow: hidden;
 }
 
@@ -86,6 +86,7 @@ header {
 
 .hero::before {
     content: "";
+    top: 0;
     position: absolute;
     inset: 0;
     background: rgba(255, 255, 255, 0.75);
@@ -337,8 +338,9 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 10px;
     margin-top: 20px;
-    padding: 0px 0px 0px 80px;
+    padding: 0px 0px 0px 55px;
     font-family: Arial, sans-serif;
 }
 
@@ -503,6 +505,11 @@ tbody td:first-child {
 
     .heading-wrapper p {
         font-size: 16px;
+    }
+
+    .breadcrumb {
+        padding: 0px;
+        margin-top: 0px;
     }
 }
 
@@ -886,6 +893,11 @@ tbody td:first-child {
     .faq-icon {
         width: 20px;
         height: 20px;
+    }
+
+    .section-heading {
+        padding: 0px;
+        margin-bottom: 10px;
     }
 }
 
@@ -1998,6 +2010,195 @@ tbody td:first-child {
     font-weight: 600;
     cursor: pointer;
     margin-top: 4px;
+}
+
+.technical-download-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #ececec;
+}
+
+.technical-download-row:last-child {
+    border-bottom: none;
+}
+
+.technical-download-row span {
+    font-size: 16px;
+    color: #333;
+}
+
+.technical-download-row a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #007bff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.technical-download-row a img {
+    width: 16px;
+    height: 16px;
+}
+
+/* =========================
+   MODAL BACKDROP
+========================= */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.45);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Show modal */
+.modal.show {
+    display: flex;
+}
+
+/* =========================
+   MODAL CONTENT
+========================= */
+.modal-content {
+    width: 100%;
+    max-width: 620px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 28px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #1e1e1e;
+}
+
+/* Close button */
+.close-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d9d9d9;
+    background: #f8f8f8;
+    border-radius: 8px;
+    font-size: 24px;
+    line-height: 1;
+    color: #777;
+    cursor: pointer;
+}
+
+/* Alert */
+.success-alert {
+    display: none;
+    margin: 20px 28px 0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #e9f9ee;
+    color: #1f7a38;
+    font-size: 14px;
+    border: 1px solid #b7e4c7;
+}
+
+.success-alert.show {
+    display: block;
+}
+
+/* Form */
+#brochureForm {
+    padding: 24px 28px 28px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #444;
+    font-weight: 500;
+}
+
+.form-group label span {
+    color: red;
+}
+
+.form-group input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+}
+
+/* Footer */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+/* Submit button */
+.submit-btn {
+    height: 44px;
+    padding: 0 28px;
+    border: none;
+    border-radius: 8px;
+    background: #dce3f0;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #bfcbe3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .technical-download-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .modal-header,
+    #brochureForm {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 18px;
+        max-width: 90%;
+    }
 }
 
 

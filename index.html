@@ -348,7 +348,6 @@
                     <div class="faq-item">
                         <button class="faq-question">
                             <span>Can aluminum tubing be customized?</span>
-
                             <img src="./images/accordian-close.svg" alt="open" class="faq-icon" />
                         </button>
 
@@ -747,27 +746,65 @@
                 </p>
             </div>
 
+            <!-- Technical Downloads Section -->
             <div class="technical-downloads-card">
                 <div class="technical-download-row">
                     <span>HDPE Pipe Installation Manual (PDF)</span>
-                    <a href="#">
+                    <a href="#" class="download-btn">
                         Download PDF
                         <img src="./images/download-blue.svg" alt="download">
                     </a>
                 </div>
+
                 <div class="technical-download-row">
                     <span>Maintenance & Inspection Handbook (PDF)</span>
-                    <a href="#">
+                    <a href="#" class="download-btn">
                         Download PDF
                         <img src="./images/download-blue.svg" alt="download">
                     </a>
                 </div>
+
                 <div class="technical-download-row">
                     <span>Engineering Specifications Sheet (PDF)</span>
-                    <a href="#">
+                    <a href="#" class="download-btn">
                         Download PDF
                         <img src="./images/download-blue.svg" alt="download">
                     </a>
+                </div>
+            </div>
+
+            <!-- Popup Modal -->
+            <div id="downloadModal" class="modal">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <h2>Let us email the entire catalogue to you</h2>
+                        <button class="close-btn" id="closeModal">&times;</button>
+                    </div>
+
+                    <!-- Alert Message -->
+                    <div id="successAlert" class="success-alert">
+                        Brochure request submitted successfully!
+                    </div>
+
+                    <!-- Form -->
+                    <form id="brochureForm">
+                        <div class="form-group">
+                            <label for="email">Your Email <span>*</span></label>
+                            <input type="email" id="email" placeholder="example@gmail.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact">Your Contact (Optional)</label>
+                            <input type="text" id="contact" placeholder="+91-0000000000">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="submit-btn">
+                                Download Brochure
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
