@@ -69,7 +69,7 @@ header {
 /* Hero Section */
 .hero {
     position: relative;
-    background: url('images/bg.png');
+    background: url('./images/bg.png');
     background-size: cover;
     background-position: center;
     padding: 40px;
@@ -2102,7 +2102,7 @@ tbody td:first-child {
     position: relative;
     width: 100%;
     overflow: hidden;
-    background: url("images/bg.png") center center/cover no-repeat;
+    background: url("./images/bg.png") center center/cover no-repeat;
 }
 
 .footer-bg-overlay {
