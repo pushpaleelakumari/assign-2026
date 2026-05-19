@@ -1,3 +1,66 @@
+// carosal
+document.addEventListener("DOMContentLoaded", () => {
+
+    const track = document.querySelector(".carousel-track");
+
+    const slides = document.querySelectorAll(".hero-img");
+
+    const prevBtn = document.querySelector(".left");
+
+    const nextBtn = document.querySelector(".right");
+
+    const thumbs = document.querySelectorAll(".thumb");
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+
+        track.style.transform =
+            `translateX(-${currentIndex * 100}%)`;
+
+        thumbs.forEach((thumb, index) => {
+
+            thumb.classList.toggle(
+                "active",
+                index === currentIndex
+            );
+        });
+    }
+
+    nextBtn.addEventListener("click", () => {
+
+        currentIndex++;
+
+        if (currentIndex >= slides.length) {
+            currentIndex = 0;
+        }
+
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", () => {
+
+        currentIndex--;
+
+        if (currentIndex < 0) {
+            currentIndex = slides.length - 1;
+        }
+
+        updateCarousel();
+    });
+
+    thumbs.forEach((thumb, index) => {
+
+        thumb.addEventListener("click", () => {
+
+            currentIndex = index;
+
+            updateCarousel();
+        });
+    });
+
+});
+
 // Accordian Code
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -148,32 +211,32 @@ document.addEventListener("DOMContentLoaded", function () {
        BUTTON ENABLE / DISABLE
     ========================= */
     function validateForm() {
-    const emailValue = emailInput.value.trim();
+        const emailValue = emailInput.value.trim();
 
-    // Basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isValidEmail = emailRegex.test(emailValue);
+        // Basic email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const isValidEmail = emailRegex.test(emailValue);
 
-    if (isValidEmail) {
-        submitBtn.disabled = false;
-        submitBtn.classList.add("active");
+        if (isValidEmail) {
+            submitBtn.disabled = false;
+            submitBtn.classList.add("active");
 
-        // Enable button styles
-        submitBtn.style.backgroundColor = "#2B3990";
-        submitBtn.style.color = "#ffffff";
-        submitBtn.style.cursor = "pointer";
-        submitBtn.style.opacity = "1";
-    } else {
-        submitBtn.disabled = true;
-        submitBtn.classList.remove("active");
+            // Enable button styles
+            submitBtn.style.backgroundColor = "#2B3990";
+            submitBtn.style.color = "#ffffff";
+            submitBtn.style.cursor = "pointer";
+            submitBtn.style.opacity = "1";
+        } else {
+            submitBtn.disabled = true;
+            submitBtn.classList.remove("active");
 
-        // Disabled button styles
-        submitBtn.style.backgroundColor = "#DCE3F0";
-        submitBtn.style.color = "#ffffff";
-        submitBtn.style.cursor = "not-allowed";
-        submitBtn.style.opacity = "0.8";
+            // Disabled button styles
+            submitBtn.style.backgroundColor = "#DCE3F0";
+            submitBtn.style.color = "#ffffff";
+            submitBtn.style.cursor = "not-allowed";
+            submitBtn.style.opacity = "0.8";
+        }
     }
-}
 
     /* =========================
        OPEN MODAL
