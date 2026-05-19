@@ -223,7 +223,7 @@ header {
     .slider-btn {
         width: 36px;
         height: 36px;
-        top: 50%;
+        top: 50% !important;
     }
 
     .slider-btn img {
