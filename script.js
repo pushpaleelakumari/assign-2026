@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const faqIcon = faq.querySelector(".faq-icon");
 
                 faqAnswer.style.maxHeight = "0px";
-                faqIcon.src = "/images/accordian-close.svg";
+                faqIcon.src = "./images/accordian-close.svg";
             });
 
             if (!isActive) {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 answer.style.maxHeight =
                     answer.scrollHeight + "px";
 
-                icon.src = "/images/accordian-open.svg";
+                icon.src = "./images/accordian-open.svg";
             }
         });
     });
