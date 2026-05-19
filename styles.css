@@ -117,17 +117,26 @@ header {
 .hero-image {
     position: relative;
     flex: 1;
+    width: 100%;
 }
 
-.hero-image img {
+.pipe-work-left {
+    position: relative;
     width: 100%;
+}
+
+.hero-image img.hero-img {
+    width: 100%;
+    height: auto;
     border-radius: 20px;
     display: block;
+    object-fit: cover;
 }
 
 .slider-btn {
     position: absolute;
-    top: 40%;
+    top: 50%;
+    transform: translateY(-50%);
     width: 42px;
     height: 42px;
     border-radius: 50%;
@@ -136,7 +145,12 @@ header {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 18px;
+    z-index: 2;
+}
+
+.slider-btn img {
+    width: 18px;
+    height: 18px;
 }
 
 .left {
@@ -151,14 +165,88 @@ header {
     display: flex;
     gap: 12px;
     margin-top: 18px;
+    flex-wrap: wrap;
 }
 
 .thumb {
-    width: 80px;
-    height: 80px;
     background: white;
     border: 1px solid #CFD1D4;
     border-radius: 8px;
+    flex-shrink: 0;
+}
+
+/* ========================= */
+/* Tablet */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .slider-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .slider-btn img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .left {
+        left: 10px;
+    }
+
+    .right {
+        right: 10px;
+    }
+
+    .thumbs {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .thumb {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* ========================= */
+/* Mobile */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+    .hero-image img.hero-img {
+        border-radius: 14px;
+    }
+
+    .slider-btn {
+        width: 32px;
+        height: 32px;
+        top: 34%;
+    }
+
+    .slider-btn img {
+        width: 12px;
+        height: 12px;
+    }
+
+    .left {
+        left: 8px;
+    }
+
+    .right {
+        right: 8px;
+    }
+
+    .thumbs {
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .thumb {
+        border-radius: 6px;
+    }
 }
 
 /* Right */
@@ -1155,11 +1243,6 @@ tbody td:first-child {
     .card-content p {
         font-size: 14px;
         line-height: 1.5;
-    }
-
-    .slider-btn {
-        width: 58px;
-        height: 58px;
     }
 }
 
